@@ -26,7 +26,7 @@ MODEL_SERVER_ARGS="--tensor-parallel-size=8 --max-model-len 131072 --trust-remot
 ```
 ns prepare_data ruler \
     --cluster=${CLUSTER} \
-    --expname=rulerv1-data-${MODEL_NAME}-${LENGTH} \
+    --expname=ruler-data-${MODEL_NAME}-${LENGTH} \
     --data_dir=${DATA_DIR} \
     --setup=${MODEL_NAME}-${LENGTH} \
     --tokenizer_path=${MODEL} \
@@ -36,7 +36,7 @@ ns prepare_data ruler \
 ```
 ns eval \
     --cluster=${CLUSTER} \
-    --expname=ruler1-${MODEL_NAME}-${LENGTH} \
+    --expname=ruler-${MODEL_NAME}-${LENGTH} \
     --data_dir=${DATA_DIR} \
     --output_dir=${OUTPUT_DIR} \
     --benchmarks=ruler.${MODEL_NAME}-${LENGTH} \
