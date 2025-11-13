@@ -2,7 +2,7 @@
 
 ## 💡 Requirements
 
-- Clone NeMo-Skills [repo](https://github.com/NVIDIA-NeMo/Skills/tree/main).
+- Clone NeMo-Skills branch [chsieh/ruler-remove-prefix](https://github.com/NVIDIA-NeMo/Skills/tree/chsieh/ruler-remove-prefix).
 - Install NeMo-Skills `cd Skills && pip install -e .`.
 - Setup cluster config under folder `Skills/cluster_configs`. 
     - You can create slurm or local config on your preference.
