@@ -1,0 +1,26 @@
+[
+  {
+    "length": 4096,
+    "latency_ms": 14.276
+  },
+  {
+    "length": 8192,
+    "latency_ms": 14.282
+  },
+  {
+    "length": 16384,
+    "latency_ms": 14.276
+  },
+  {
+    "length": 32768,
+    "latency_ms": 14.239
+  },
+  {
+    "length": 65536,
+    "latency_ms": 14.231
+  },
+  {
+    "length": 131072,
+    "latency_ms": 14.184
+  }
+]
