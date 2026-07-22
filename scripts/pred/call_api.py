@@ -302,7 +302,7 @@ def main():
                 kwargs=dict(
                     idx_list=idx_list,
                     index_list=[data_point['index'] for data_point in batch],
-                    input_list=[data_point['input'] for data_point in batch],
+                    input_list=[data_point['input'] + data_point.get('answer_prefix', '') for data_point in batch],
                     outputs_list=[data_point['outputs'] for data_point in batch],
                     others_list=[data_point.get('others', {}) for data_point in batch],
                     truncation_list=[data_point.get('truncation', -1) for data_point in batch],
