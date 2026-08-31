@@ -339,6 +339,82 @@ class OpenAIClient:
         return authToken
 
 
+class OrcaRouterClient:
+    """Client for OrcaRouter (https://www.orcarouter.ai), an OpenAI-compatible
+    AI gateway. It exposes an OpenAI-compatible API at
+    https://api.orcarouter.ai/v1 and routes requests to a model of the form
+    <vendor>/<model>, e.g. openai/gpt-4o-mini, via the ORCAROUTER_API_KEY."""
+
+    def __init__(
+        self,
+        model_name,
+        **generation_kwargs
+    ):
+        model2length = {
+            # OrcaRouter
+            'orcarouter/auto': 128000,
+        }
+        self.orcarouter_api_key = os.environ["ORCAROUTER_API_KEY"]
+        self.model_name = model_name
+        self.max_length = model2length.get(self.model_name, 128000)
+        self.generation_kwargs = generation_kwargs
+        import tiktoken
+        self.encoding = tiktoken.get_encoding("cl100k_base")
+        self._create_client()
+
+    def _create_client(self,):
+        from openai import OpenAI
+        self.client = OpenAI(
+            base_url="https://api.orcarouter.ai/v1",
+            api_key=self.orcarouter_api_key,
+        )
+
+    def _count_tokens(self, messages):
+        tokens_per_message = 3
+        tokens_per_name = 1
+        num_tokens = 0
+        for message in messages:
+            num_tokens += tokens_per_message
+            for key, value in message.items():
+                num_tokens += len(self.encoding.encode(value))
+                if key == "name":
+                    num_tokens += tokens_per_name
+        num_tokens += 3  # every reply is primed with <|start|>assistant<|message|>
+        return num_tokens
+
+    @retry(wait=wait_random_exponential(min=15, max=60), stop=stop_after_attempt(3))
+    def _send_request(self, request):
+        response = self.client.chat.completions.create(
+            model=self.model_name,
+            messages=request['msgs'],
+            max_tokens=request['tokens_to_generate'],
+            temperature=request['temperature'],
+            seed=request['random_seed'],
+            top_p=request['top_p'],
+            stop=request['stop'],
+        )
+        return response
+
+    def __call__(
+        self,
+        prompt: str,
+    ):
+        user_assistant_msgs = [{"role": "user", "content": prompt}]
+        msgs = user_assistant_msgs
+        orcarouter_length = self._count_tokens(msgs)
+        request = self.generation_kwargs
+
+        tokens_to_generate_new = self.max_length - orcarouter_length
+        if tokens_to_generate_new < request['tokens_to_generate']:
+            print(f"Reduce generate tokens from {request['tokens_to_generate']} to {tokens_to_generate_new}")
+            request['tokens_to_generate'] = tokens_to_generate_new
+
+        request["msgs"] = msgs
+        outputs = self._send_request(request)
+        response = {'text': [outputs.choices[0].message.content]}
+        return response
+
+
 class GeminiClient:
     def __init__(
         self,
