@@ -49,6 +49,7 @@ SERVER_TYPES = (
     'vllm',
     'sglang',
     'openai',
+    'orcarouter',
     'gemini',
     'hf',
     'mamba',
@@ -145,6 +146,18 @@ def get_llm(tokens_to_generate):
     elif args.server_type == 'openai':
         from client_wrappers import OpenAIClient
         llm = OpenAIClient(
+            model_name=args.model_name_or_path,
+            temperature=args.temperature,
+            top_k=args.top_k,
+            top_p=args.top_p,
+            random_seed=args.random_seed,
+            stop=args.stop_words,
+            tokens_to_generate=tokens_to_generate,
+        )
+
+    elif args.server_type == 'orcarouter':
+        from client_wrappers import OrcaRouterClient
+        llm = OrcaRouterClient(
             model_name=args.model_name_or_path,
             temperature=args.temperature,
             top_k=args.top_k,
