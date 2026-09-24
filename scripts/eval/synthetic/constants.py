@@ -20,13 +20,20 @@ TASK_NAME: {
 }
 """
 
+import re
+
+
+def _contains_reference(pred, reference):
+    pattern = rf"(?<!\w){re.escape(reference.lower())}(?!\w)"
+    return re.search(pattern, pred.lower()) is not None
+
 
 def string_match_part(preds, refs):
-    score = sum([max([1.0 if r.lower() in pred.lower() else 0.0 for r in ref]) for pred, ref in zip(preds, refs)]) / len(preds) * 100
+    score = sum([max([1.0 if _contains_reference(pred, r) else 0.0 for r in ref]) for pred, ref in zip(preds, refs)]) / len(preds) * 100
     return round(score, 2)
 
 def string_match_all(preds, refs):
-    score = sum([sum([1.0 if r.lower() in pred.lower() else 0.0 for r in ref]) / len(ref) for pred, ref in zip(preds, refs)]) / len(preds) * 100
+    score = sum([sum([1.0 if _contains_reference(pred, r) else 0.0 for r in ref]) / len(ref) for pred, ref in zip(preds, refs)]) / len(preds) * 100
     return round(score, 2)
     
 
