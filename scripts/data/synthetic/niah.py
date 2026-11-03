@@ -278,8 +278,8 @@ def generate_samples(num_samples: int, max_seq_length: int, save_dir: str, incre
         answer_prefix = input_text[answer_prefix_index:]
         input_text = input_text[:answer_prefix_index]
         # find answer position in text
-        index = input_text.find(answer[0])
-        token_position_answer = len(TOKENIZER.text_to_tokens(input_text[:index]))
+        answer_pos = input_text.find(answer[0])
+        token_position_answer = len(TOKENIZER.text_to_tokens(input_text[:answer_pos]))
         formatted_output = {
             'index': index,
             "input": input_text,
