@@ -7,17 +7,17 @@ This repository contains code for our paper [RULER: What’s the Real Context Si
 |[Llama2](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) (7B)|4K||85.6|
 [Jamba-1.5-large*](https://huggingface.co/ai21labs/AI21-Jamba-1.5-Large) (94B/398B)|256k|>128k|<ins>96.7</ins>|<ins>96.6</ins>|<ins>96.4</ins>|<ins>96.0</ins>|<ins>95.4</ins>|<ins>95.1</ins>|96.0|95.7 **(1st)**|96.3 **(1st)**|
 [Gemini-1.5-pro](https://ai.google.dev/gemini-api/docs/models/gemini#:~:text=Gemini-,Gemini%201.5%20Pro%20(Preview%20only),-Text%20and%20images)|1M|>128K|<ins>96.7</ins>|<ins>95.8</ins>|<ins>96.0</ins>|<ins>95.9</ins>|<ins>95.9</ins>|<ins>94.4</ins>|95.8|95.5 **(2nd)**|96.1 **(2nd)**|
-[Qwen2.5-14B-Instruct-1M*](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-1m) (14B)|1M|>128K|<ins>97.5</ins>|<ins>97.1</ins>|<ins>94.6</ins>|<ins>94.9</ins>|<ins>94.9</ins>|<ins>92.2</ins>|95.7|TBD|TBD|
+[Qwen2.5-14B-Instruct-1M*](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct-1m) (14B)|1M|>128K|<ins>97.5</ins>|<ins>97.1</ins>|<ins>94.6</ins>|<ins>94.9</ins>|<ins>94.9</ins>|<ins>92.2</ins>|95.2|TBD|TBD|
 [Qwen3-235B-A22B*](https://huggingface.co/Qwen/Qwen3-235B-A22B) (235B)|128K|>128K|<ins>97.7</ins>|<ins>97.2</ins>|<ins>96.4</ins>|<ins>95.1</ins>|<ins>93.3</ins>|<ins>90.6</ins>|95.0|TBD|TBD|
-[Qwen3-14B*](https://huggingface.co/Qwen/Qwen3-14B) (14B)|128K|>128K|<ins>98.0</ins>|<ins>97.8</ins>|<ins>96.4</ins>|<ins>96.1</ins>|<ins>94.0</ins>|<ins>85.1</ins>|94.6|TBD|TBD|
+[Qwen3-14B*](https://huggingface.co/Qwen/Qwen3-14B) (14B)|128K|64K|<ins>98.0</ins>|<ins>97.8</ins>|<ins>96.4</ins>|<ins>96.1</ins>|<ins>94.0</ins>|85.1|94.6|TBD|TBD|
 [Jamba-1.5-mini](https://huggingface.co/ai21labs/AI21-Jamba-1.5-Mini) (12B/52B)|256K|>128K|<ins>95.6</ins>|<ins>95.6</ins>|<ins>94.8</ins>|<ins>94.6</ins>|<ins>92.8</ins>|<ins>90.0</ins>|93.9|93.1 **(3rd)**|94.8 **(3rd)**
 [Qwen3-32B*](https://huggingface.co/Qwen/Qwen3-32B) (32B)|128K|>128K|<ins>98.4</ins>|<ins>96.0</ins>|<ins>96.2</ins>|<ins>94.4</ins>|<ins>91.8</ins>|<ins>85.6</ins>|93.7|TBD|TBD|
 [EXAONE-4.0-32B*](https://huggingface.co/LGAI-EXAONE/EXAONE-4.0-32B) (32B)|128K|>128K|<ins>96.3</ins>|<ins>94.9</ins>|<ins>93.9</ins>|<ins>93.6</ins>|<ins>91.7</ins>|<ins>88.2</ins>|93.1|TBD|TBD|
-[Qwen2.5-7B-Instruct-1M*](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-1M) (7B)|1M|>128K|<ins>96.8</ins>|<ins>95.3</ins>|<ins>93.0</ins>|<ins>91.1</ins>|<ins>90.4</ins>|84.4|91.8|TBD|TBD|
+[Qwen2.5-7B-Instruct-1M*](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-1M) (7B)|1M|64K|<ins>96.8</ins>|<ins>95.3</ins>|<ins>93.0</ins>|<ins>91.1</ins>|<ins>90.4</ins>|84.4|91.8|TBD|TBD|
 [Qwen3-30B-A3B*](https://huggingface.co/Qwen/Qwen3-30B-A3B) (30B)|128K|64K|<ins>96.5</ins>|<ins>97.0</ins>|<ins>95.3</ins>|<ins>92.4</ins>|<ins>89.1</ins>|79.2|91.6|TBD|TBD|
 [GPT-4-1106-preview](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4#:~:text=gpt%2D4%2D1106%2Dpreview,Up%20to%20Apr%202023)|128K|64K|<ins>96.6</ins>|<ins>96.3</ins>|<ins>95.2</ins>|<ins>93.2</ins>|<ins>87.0</ins>|81.2|91.6|89.0 **(4th)**|94.1 **(4th)**|
 [Llama3.1](https://huggingface.co/meta-llama/Meta-Llama-3.1-70B-Instruct) (70B)|128K|64K|<ins>96.5</ins>|<ins>95.8</ins>|<ins>95.4</ins>|<ins>94.8</ins>|<ins>88.4</ins>|66.6|89.6|85.5 **(10th)**|93.7 **(5th)**|
-[Qwen3-8B*](https://huggingface.co/Qwen/Qwen3-8B) (8B)|128K|64K|<ins>96.3</ins>|<ins>96.0</ins>|<ins>91.8</ins>|<ins>91.2</ins>|82.1|77.4|89.1|TBD|TBD|
+[Qwen3-8B*](https://huggingface.co/Qwen/Qwen3-8B) (8B)|128K|32K|<ins>96.3</ins>|<ins>96.0</ins>|<ins>91.8</ins>|<ins>91.2</ins>|82.1|77.4|89.1|TBD|TBD|
 [Mistral-Large-2411](https://huggingface.co/mistralai/Mistral-Large-Instruct-2411) (123B)|128K|64K|<ins>96.4</ins>|<ins>96.3</ins>|<ins>95.3</ins>|<ins>94.0</ins>|<ins>85.9</ins>|48.1|86.0|79.5 **(18th)**|92.5 **(6th)**|
 [Command-R-plus-0824](https://huggingface.co/CohereForAI/c4ai-command-r-plus-08-2024) (104B)|128K|32K|<ins>96.0</ins>|<ins>95.1</ins>|<ins>94.0</ins>|<ins>92.4</ins>|85.4|64.6|87.9|83.4 **(13th)**|92.4 **(7th)**|
 [Qwen2](https://huggingface.co/Qwen/Qwen2-72B-Instruct) (72B)|128K|32K|<ins>96.9</ins>|<ins>96.1</ins>|<ins>94.9</ins>|<ins>94.1</ins>|79.8|53.7|85.9|79.6 **(17th)**|92.3 **(8th)**|
@@ -32,8 +32,8 @@ This repository contains code for our paper [RULER: What’s the Real Context Si
 [GradientAI/Llama3](https://huggingface.co/gradientai/Llama-3-70B-Instruct-Gradient-1048k) (70B)|1M|16K|<ins>95.1</ins>|<ins>94.4</ins>|<ins>90.8</ins>|85.4|80.9|72.1|86.5|82.6 **(15th)**|90.3 **(17th)**|
 [Mixtral-8x22B](https://huggingface.co/mistralai/Mixtral-8x22B-instruct-v0.1) (39B/141B)|64K|32K|<ins>95.6</ins>|<ins>94.9</ins>|<ins>93.4</ins>|<ins>90.9</ins>|84.7|31.7|81.9|73.5 **(22nd)**|90.3 **(18th)**|
 [Yi](https://huggingface.co/01-ai/Yi-34B-200K) (34B)|200K|32K|<ins>93.3</ins>|<ins>92.2</ins>|<ins>91.3</ins>|<ins>87.5</ins>|83.2|77.3|87.5|84.8 **(12th)**|90.1 **(19th)**|
-[Qwen3-4B*](https://huggingface.co/Qwen/Qwen3-4B) (4B)|128K|64K|<ins>95.1</ins>|<ins>93.6</ins>|<ins>91.0</ins>|<ins>87.8</ins>|77.8|66.0|85.2|TBD|TBD|
-[EXAONE-4.0-1.2B*](https://huggingface.co/LGAI-EXAONE/EXAONE-4.0-1.2B) (1.2B)|64K|32K|<ins>87.0</ins>|<ins>86.7</ins>|<ins>88.8</ins>|81.1|77.4|-|84.2|TBD|TBD|
+[Qwen3-4B*](https://huggingface.co/Qwen/Qwen3-4B) (4B)|128K|32K|<ins>95.1</ins>|<ins>93.6</ins>|<ins>91.0</ins>|<ins>87.8</ins>|77.8|66.0|85.2|TBD|TBD|
+[EXAONE-4.0-1.2B*](https://huggingface.co/LGAI-EXAONE/EXAONE-4.0-1.2B) (1.2B)|64K|16K|<ins>87.0</ins>|<ins>86.7</ins>|<ins>88.8</ins>|81.1|77.4|-|84.2|TBD|TBD|
 [Phi3-mini](https://huggingface.co/microsoft/Phi-3-mini-128K-instruct) (3.8B)|128K|32K|<ins>92.2</ins>|<ins>91.5</ins>|<ins>90.7</ins>|<ins>87.5</ins>|80.6|66.7|84.8|80.9 **(16th)**|88.7 **(20th)**|
 [Phi3-medium](https://huggingface.co/microsoft/Phi-3-medium-128K-instruct) (14B)|128K|32K|<ins>93.3</ins>|<ins>93.2</ins>|<ins>91.1</ins>|<ins>86.8</ins>|78.6|46.1|81.5|74.8 **(21st)**|88.3 **(21st)**|
 [Mixtral-8x7B](https://huggingface.co/mistralai/Mixtral-8x7B-instruct-v0.1) (12.9B/46.7B)|32K|32K|<ins>94.9</ins>|<ins>92.1</ins>|<ins>92.5</ins>|<ins>85.9</ins>|72.4|44.5|80.4|72.8 **(23rd)**|87.9 **(22nd)**|
