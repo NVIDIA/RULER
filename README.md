@@ -119,6 +119,14 @@ case $MODEL_NAME in
         TOKENIZER_TYPE="openai"
         OPENAI_API_KEY="" # your OpenAI API key
         ;;
+    YOUR_ORCAROUTER_MODEL_NAME)
+        MODEL_PATH="" # model name in <vendor>/<model> format, e.g. openai/gpt-4o-mini or orcarouter/auto
+        MODEL_TEMPLATE_TYPE="base"
+        MODEL_FRAMEWORK="orcarouter"
+        TOKENIZER_PATH="cl100k_base"
+        TOKENIZER_TYPE="openai"
+        ORCAROUTER_API_KEY="" # your OrcaRouter API key
+        ;;
     YOUR_GEMINI_MODEL_NAME)
         MODEL_PATH="" # Gemini model name listed in https://ai.google.dev/gemini-api/docs/models/gemini
         MODEL_TEMPLATE_TYPE="base"

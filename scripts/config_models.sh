@@ -83,6 +83,14 @@ MODEL_SELECT() {
             TOKENIZER_TYPE="gemini"
             GEMINI_API_KEY=""
             ;;
+        orcarouter)
+            MODEL_PATH="orcarouter/auto"
+            MODEL_TEMPLATE_TYPE="base"
+            MODEL_FRAMEWORK="orcarouter"
+            TOKENIZER_PATH="cl100k_base"
+            TOKENIZER_TYPE="openai"
+            ORCAROUTER_API_KEY=""
+            ;;
     esac
 
 
@@ -97,5 +105,5 @@ MODEL_SELECT() {
     fi
 
 
-    echo "$MODEL_PATH:$MODEL_TEMPLATE_TYPE:$MODEL_FRAMEWORK:$TOKENIZER_PATH:$TOKENIZER_TYPE:$OPENAI_API_KEY:$GEMINI_API_KEY:$AZURE_ID:$AZURE_SECRET:$AZURE_ENDPOINT"
+    echo "$MODEL_PATH:$MODEL_TEMPLATE_TYPE:$MODEL_FRAMEWORK:$TOKENIZER_PATH:$TOKENIZER_TYPE:$OPENAI_API_KEY:$GEMINI_API_KEY:$AZURE_ID:$AZURE_SECRET:$AZURE_ENDPOINT:$ORCAROUTER_API_KEY"
 }
