@@ -140,7 +140,7 @@ def generate_input_output(index, num_docs):
         repeats = (num_docs + len(DOCS) - 1) // len(DOCS)  # Ceiling division
         all_docs = (DOCS * repeats)[:num_docs]
 
-    random.Random(args.random_seed).shuffle(all_docs)
+    random.shuffle(all_docs)
 
     context = '\n\n'.join([DOCUMENT_PROMPT.format(i=i+1, document=d) for i, d in enumerate(all_docs)])
     input_text = args.template.format(
